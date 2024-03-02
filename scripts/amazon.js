@@ -32,7 +32,7 @@
 //     price:1899
 // },
 // ];
-import {cart} from '../data/cart.js';
+import {cart,addtocart} from '../data/cart.js';
 import {products} from '../data/products.js';
 let productshtml='';
 products.forEach((product)=>{
@@ -88,31 +88,20 @@ products.forEach((product)=>{
 });
 document.querySelector('.js-products-grid')
     .innerHTML=productshtml;
+function updatecartquantity(){
+    let cartq=0;
+    cart.forEach((item)=>{
+        cartq+=item.quantity;
+    });
+    document.querySelector('.js-cart-q')
+        .innerHTML=cartq;
+}
 document.querySelectorAll('.button-primary')
     .forEach((button) => {
         button.addEventListener('click',()=>{
             const productId=button.dataset.productId;
-            let matchingitem;
-            cart.forEach((item)=>{
-                if(productId===item.productId){
-                    matchingitem=item
-                }
-            });
-            if(matchingitem){
-                matchingitem.quantity+=1;
-            }
-            else{
-                cart.push({
-                    productId:productId,
-                    quantity:1
-                });
-            }
-            let cartq=0;
-            cart.forEach((item)=>{
-                cartq+=item.quantity;
-            });
-            document.querySelector('.js-cart-q')
-                .innerHTML=cartq;
+            addtocart(productId);
+            updatecartquantity();
         });
     });
 
