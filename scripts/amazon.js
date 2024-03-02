@@ -32,7 +32,8 @@
 //     price:1899
 // },
 // ];
-import {cart} from '../data/cart.js'
+import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
 let productshtml='';
 products.forEach((product)=>{
     productshtml+=`
