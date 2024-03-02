@@ -32,6 +32,7 @@
 //     price:1899
 // },
 // ];
+import {cart} from '../data/cart.js'
 let productshtml='';
 products.forEach((product)=>{
     productshtml+=`
@@ -105,7 +106,12 @@ document.querySelectorAll('.button-primary')
                     quantity:1
                 });
             }
-            console.log(cart);
+            let cartq=0;
+            cart.forEach((item)=>{
+                cartq+=item.quantity;
+            });
+            document.querySelector('.js-cart-q')
+                .innerHTML=cartq;
         });
     });
 
