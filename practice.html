@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #0b1522;
+            padding:8% 0% 0% 1%;
+        }
+        .gallery{
+            display:flex;
+            width:25%;
+            height:350px;
+            gap:3px;
+        }
+        .gallery >img{
+            border:2px solid white;
+            border-radius: 5px;
+            width:25%;
+            height:350px;
+            aspect-ratio: 1.5/1;
+            object-fit: cover;
+            transition: all ease 0.5s;
+        }
+        .gallery>img:hover{
+            width:200%;
+            scale:1.1 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="practice_images/nature1.jpeg" alt="images">
+        <img src="practice_images/nature2.jpg" alt="images">
+        <img src="practice_images/Nature3.jpg" alt="images">
+        <img src="practice_images/nature4.jpg" alt="images">
+        <img src="practice_images/nature5.jpeg" alt="images">
+    </div>
+</body>
+</html>
